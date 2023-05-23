@@ -6,6 +6,9 @@ import TaskDescription from "./taskDescription.vue"
 
 <template>
   <div class="task-list">
+    <div v-if="tasks.length == 0">
+      <p :style="{ color: themeTextColor }">Tasks Loading...</p>
+    </div>
     <div v-for="task in tasks" :key="task.id" class="task-card">
       <div class="left">
         <input
