@@ -6,8 +6,9 @@ dotenv.config({
 
 const MONGO_USERNAME: string = process.env.MONGO_USERNAME || '';
 const MONGO_PASSWORD: string = process.env.MONGO_PASSWORD || '';
+const MONGO_HOST: string = process.env.MONGO_HOST || '';
 
-const MONGO_URL: string = 'mongodb+srv://' + MONGO_USERNAME + ':' + MONGO_PASSWORD + '@cluster0.allvmxk.mongodb.net/';
+const MONGO_URL: string = 'mongodb+srv://' + MONGO_USERNAME + ':' + MONGO_PASSWORD + '@' + MONGO_HOST;
 
 const SERVER_PORT = Number(process.env.SERVER_PORT) || 1337;
 
