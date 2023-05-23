@@ -32,3 +32,7 @@ SERVER_PORT = "5000"
 
 1. Run `npm install` in frontend_react folder
 2. Run `npm run dev` in frontend_react folder
+
+## Output
+![image](https://github.com/UmarHassanKhan929/cowlar-fullstack-test/assets/56496945/e0076bd4-4c2e-44bb-9d2b-a4d6e22c42df)
+
