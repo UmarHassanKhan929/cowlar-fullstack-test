@@ -43,7 +43,6 @@ const TaskList = () => {
   )
 
   const viewTask = (task) => {
-    console.log("View task:", task)
     setSelectedTask(task)
   }
 
@@ -58,9 +57,11 @@ const TaskList = () => {
     <div className={styles.task_list}>
       {tasksAreLoading ? (
         <p className="theme_color">Tasks Loading...</p>
+      ) : tasksAreError ? (
+        <p className="theme_color">Error while fetching Tasks</p>
       ) : (
         tasks.map((task) => (
-          <div key={task.id} className={styles.task_card}>
+          <div key={task._id} className={styles.task_card}>
             <div className={styles.left}>
               <input
                 type="checkbox"

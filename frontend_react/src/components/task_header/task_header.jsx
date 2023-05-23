@@ -37,7 +37,7 @@ const TaskHeader = () => {
   }, [isExpanded])
 
   const addTask = () => {
-    if (taskInput) {
+    if (taskInput.trim() !== "") {
       addTaskMutation.mutate(taskInput)
       setTaskInput("")
     }
