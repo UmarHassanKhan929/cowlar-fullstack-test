@@ -7,3 +7,5 @@ dist
 .env.prod
 
 test.http
+
+coverage/

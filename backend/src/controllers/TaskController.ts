@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import Task from '../models/TaskModel.js';
-import mongoose from 'mongoose';
+import Task from '../models/TaskModel';
 
 const getTasks = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
@@ -9,7 +8,7 @@ const getTasks = async (req: Request, res: Response, next: NextFunction): Promis
       message: 'Tasks fetched',
       body: tasks
     });
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).json({ message: err.message });
   }
 };
@@ -22,7 +21,7 @@ const createTask = async (req: Request, res: Response): Promise<void> => {
       message: 'Task created',
       body: newTask
     });
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).json({ message: err.message });
   }
 };
@@ -35,7 +34,7 @@ const updateTask = async (req: Request, res: Response): Promise<void> => {
       message: 'Task updated',
       body: updatedTask
     });
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).json({ message: err.message });
   }
 };
@@ -44,7 +43,7 @@ const deleteTask = async (req: Request, res: Response): Promise<void> => {
   try {
     await Task.findByIdAndRemove(req.params.id);
     res.status(200).json({ message: 'Task deleted' });
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).json({ message: err.message });
   }
 };

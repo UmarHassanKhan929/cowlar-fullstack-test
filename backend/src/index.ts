@@ -3,11 +3,11 @@ import express, { Express, Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 
 /** Custom Import */
-import { config } from './config/config.js';
-import Logging from './library/logging.js';
+import { config } from './config/config';
+import Logging from './library/logging';
 
 /** Route Import */
-import TaskRoutes from './routes/TaskRoutes.js';
+import TaskRoutes from './routes/TaskRoutes';
 
 /** Express App */
 const app: Express = express();
@@ -77,3 +77,6 @@ const StartServer = () => {
     Logging.info(`Server is listening on port: ${config.server.port}`);
   });
 };
+
+export default app;
+// export { StartServer };
