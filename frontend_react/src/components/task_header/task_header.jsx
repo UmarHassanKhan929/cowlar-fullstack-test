@@ -49,7 +49,10 @@ const TaskHeader = () => {
   }
 
   return (
-    <div className={`${styles.tile} ${isExpanded ? styles.expanded : ""}`}>
+    <div
+      className={`${styles.tile} ${isExpanded ? styles.expanded : ""}`}
+      data-testid="task-header-component"
+    >
       <div className={styles.content}>
         <div className={styles.left}>
           <FontAwesomeIcon

@@ -7,7 +7,7 @@ import TaskList from "./components/task_list/task_list"
 const queryClient = new QueryClient()
 function App() {
   return (
-    <div>
+    <div data-testid="app-component">
       <div className="background"></div>
       <QueryClientProvider client={queryClient}>
         <div className="content">

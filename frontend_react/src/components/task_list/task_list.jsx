@@ -27,6 +27,7 @@ const TaskList = () => {
       const resData = await response.json()
       return resData.body
     },
+    retry: false,
   })
 
   const updateTaskMutation = useMutation(
@@ -61,7 +62,11 @@ const TaskList = () => {
         <p className="theme_color">Error while fetching Tasks</p>
       ) : (
         tasks.map((task) => (
-          <div key={task._id} className={styles.task_card}>
+          <div
+            key={task._id}
+            className={styles.task_card}
+            data-testid="task-card"
+          >
             <div className={styles.left}>
               <input
                 type="checkbox"
